@@ -188,7 +188,7 @@ function CloseDetail() {
 }
 
 function ResetMoney() {
-	Balance = 500000;
+	Balance = 10000;
 	ChangeBalance();
 	Swal.fire(
 		'Phục Hồi Thành Công',
