@@ -1,0 +1,367 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	user-select: none;
+	outline: none;
+}
+
+body {
+	overflow-x: hidden;
+	font-family: "Arial",sans-serif;
+	font-weight: bold;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+header {
+	background-color: red;
+	color: white;
+	width: 100vw;
+	height: 200px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+}
+
+header h1 {
+	position: relative;
+	text-transform: uppercase;
+	margin-bottom: 8px;
+	font-size: 2.5rem;
+
+}
+
+header p {
+	font-size: 1.8rem;
+	text-align: center;
+}
+
+.detailBet {
+	margin: 10px 10px 0;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	font-size: 1.2rem;
+	cursor: pointer;
+	background-color: #03BD9C;
+	box-shadow: 0 0 5px #5CB65C,
+	0 0 10px yellow;
+	font-weight: bold;
+	color: white;
+}
+
+.resetMoney {
+	margin: 10px 10px 0;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	font-size: 1.2rem;
+	cursor: pointer;
+	background-color: gold;
+	box-shadow: 0 0 5px orange,
+	0 0 10px yellow;
+	font-weight: bold;
+	color: red;	
+}
+
+#FunctionBTN {
+	display: flex;
+}
+
+#FunctionBTN_mb {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background-color: rgba(0,0,0,0.8);
+	width: 100vw;
+	height: 100vh;
+	z-index: 999;
+}
+
+#closeFN_mb {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	font-size: 36px;
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	cursor: pointer;
+	border: 2px solid orange;
+	box-shadow: 0 0 10px yellow;
+}
+
+#close_detailBet {
+	margin-top: 25px;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	font-size: 1.2rem;
+	cursor: pointer;
+	background-color: red;
+	box-shadow: 0 0 10px yellow,
+	0 0 15px red;
+	font-weight: bold;
+	color: white;
+}
+
+#BauCua {
+	margin-top: 50px;
+	border: 2px solid black;
+	width: 70vw;
+	height: 150px;
+	border-radius: 10px;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	text-align: center;
+	place-items: center;
+}
+
+#SanDau {
+	margin-top: 5vh;
+	border: 2px solid red;
+	border-radius: 10px;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	text-align: center;
+	place-items: center;
+}
+
+.ChooseBC {
+	width: 125px;
+	height: 125px;
+	max-width: calc(100vw / 3 - 10px);
+	max-height: calc(100vw / 3 - 10px);
+	cursor: pointer;
+	border: 1px solid red;
+	border-radius: 7px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	position: relative;
+}
+
+.ChooseBC .BauCuaChoose {
+	max-width: calc(100vw / 3 - 20px);
+	max-height: calc(100vw / 3 - 20px);
+}
+
+#PlateLidPlace {
+	display: flex;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0,0,0,0.8);
+	z-index: 10;
+}
+
+#PlateLid {
+	position: absolute;
+	overflow: hidden;
+}
+
+
+.LacBC {
+	border: 2px solid red;
+	border-radius: 15px;
+	background-color: darkred;
+	padding: 10px;
+	width: 25vw;
+	height: 25vw;
+	max-width: 75px;
+	max-height: 75px;
+	position: absolute;
+	top: calc(20% * var(--indexT));
+	left: calc(18% * var(--indexL));
+}
+
+
+
+#Lid {
+	width: 250px;
+	height: 250px;
+	position: absolute;
+	-webkit-animation: moveLid 1s linear;
+	-o-animation: moveLid 1s linear;
+	animation: moveLid 1s linear;
+}
+
+#LidIn {
+	width: 250px;
+	height: 250px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+#closeShake {
+	margin-top: 333px;
+	z-index: 100;
+	width: 200px;
+	font-size: 28px;
+	border-radius: 5px;
+	color: white;
+	background-color: rgba(220,20,60,0.9);
+	border: none;
+	padding: 10px 20px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+
+@keyframes moveLid {
+	0% {
+		left: 125%;
+	}
+	100% {
+		left: 40%;
+	}
+}
+
+#submit {
+	width: 150px;
+	border-width: 0px;
+	font-weight: bold;
+	font-family: "Arials",sans-serif;
+	background-color: red;
+	margin: 10px 20px;
+	box-shadow: 0 9px #999;
+	color: white;
+	font-size: 20px;
+	padding: 15px;
+	cursor: pointer;
+	border-radius: 15px;
+	margin-top: 50px;
+}
+
+#submit:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.shake {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+.block {
+	cursor: no-drop !important;
+}
+
+.block:active {
+	box-shadow: 0 9px #999 !important;
+	transform: translateY(0px) !important;
+}
+
+@keyframes shake {
+  0% { transform: translate(2px, 2px) rotate(0deg); }
+  10% { transform: translate(-2px, -3px) rotate(-1deg); }
+  20% { transform: translate(-4px, 1px) rotate(1deg); }
+  30% { transform: translate(4px, 5px) rotate(0deg); }
+  40% { transform: translate(4px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(5px, -2px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+#Money {
+	display: flex;
+	margin-top: 15px;
+	overflow-x: auto;
+	max-width: 90vw;
+}
+
+#Money img {
+	width: 80px;
+	height: 80px;
+	cursor: pointer;
+	border-radius: 15px;
+}
+
+#SanDau .ChooseBC:active {
+	background-color: rgba(220,20,60,0.8);
+}
+
+.ChipsActive {
+	background-color: rgba(220,20,60,0.8);
+}
+
+.chipBet {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	top: var(--randomIndexT);
+	left: var(--randomIndexL);
+}
+
+#ShowBet {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	background-color: rgba(0,0,0,0.8);
+	padding: 10px 20px;
+	left: 0;
+	top: 0;
+	font-size: 16px;
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#ShowBet p {
+	font-size: 2rem;
+	color: white;
+	text-align: center;
+	text-shadow: 0 0 10px red;
+}
+
+#more {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	background-color: transparent;
+	border: none;
+	color: white;
+	font-size: 35px;
+	cursor: pointer;
+	display: none;
+}
+
+@media only screen and (max-width: 600px) {
+	h1 {
+		font-size: 2rem;
+	}
+
+	#BauCua {
+		width: 95vw;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	#FunctionBTN {
+		display: none;
+	}
+	#more {
+		display: initial;
+	}
+}

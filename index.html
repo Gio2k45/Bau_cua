@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<title>Game Bầu Cua</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+</head>
+<body>
+	<header>
+		<h1>Bầu Cua Cá Cọp</h1>
+		<p id="balanceText">Tài sản: ...$</p>
+		<div id="FunctionBTN">
+			<button class="detailBet" onclick="OpenDetail()">Xem Chi Tiết Cược</button>
+			<button class="resetMoney" onclick="ResetMoney()">Phục Hồi Tài Sản</button>
+		</div>
+	</header>
+	<button id="more" class="material-icons-outlined">reorder</button>
+	<div id="FunctionBTN_mb">
+		<button id="closeFN_mb" class="material-icons-outlined">close</button>
+		<button class="detailBet" style="width: 90vw; margin: 10px 0;" onclick="OpenDetail()">Xem Chi Tiết Cược</button>
+		<button class="resetMoney" style="width: 90vw; margin: 10px 0;" onclick="ResetMoney()">Phục Hồi Tài Sản</button>
+	</div>
+	<div id="SanDau">
+		<div class="ChooseBC">
+			<img alt="Chọn Nai" id="NaiID" class="BauCuaChoose" src="BauCua/Nai.png" />
+		</div>
+		<div class="ChooseBC">
+			<img alt="Chọn Bầu" id="BauID" class="BauCuaChoose" src="BauCua/Bau.png" />
+		</div>
+		<div class="ChooseBC">
+			<img alt="Chọn Gà" id="GaID" class="BauCuaChoose" src="BauCua/Ga.png" />
+		</div>
+		<div class="ChooseBC">
+			<img alt="Chọn Cá" id="CaID" class="BauCuaChoose" src="BauCua/Ca.png" />
+		</div>
+		<div class="ChooseBC">
+			<img alt="Chọn Cua" id="CuaID" class="BauCuaChoose" src="BauCua/Cua.png" />
+		</div>
+		<div class="ChooseBC">
+			<img alt="Chọn Tôm" id="TomID" class="BauCuaChoose" src="BauCua/Tom.png" />
+		</div>
+	</div>
+	<div id="PlateLidPlace" style="display: none">
+		<div id="PlateLid">
+			<img alt="Đĩa" src="plate.png" />
+			<img alt="Viên thứ 1" id="first" class="LacBC" style="--indexT: 1; --indexL: 2" src="BauCua/Cua.png"/>
+			<img alt="Viên thứ 2" id="second" class="LacBC" style="--indexT: 2.6; --indexL: 1" src="BauCua/Cua.png"/>
+			<img alt="Viên thứ 3" id="third" class="LacBC" style="--indexT: 2.6; --indexL: 3" src="BauCua/Cua.png"/>
+			<img alt="Nắp Đĩa" id="LidIn" src="lid.png" style="display: none"/>
+		</div>
+		<img alt="Nắp Đĩa" id="Lid" src="lid.png"/>
+		<button id="closeShake">ĐÓNG</button>
+	</div>
+	<div id="ShowBet" style="display: none;">
+
+		<p id='BetNowBC0'>Nai: 0$</p>
+		<p id='BetNowBC1'>Bầu: 0$</p>
+		<p id='BetNowBC2'>Gà: 0$</p>
+		<p id='BetNowBC3'>Cá: 0$</p>
+		<p id='BetNowBC4'>Cua: 0$</p>
+		<p id='BetNowBC5'>Tôm: 0$</p>
+		<button id="close_detailBet" onclick="CloseDetail()">Đóng Chi Tiết Cược</button>
+	</div>
+	<button id="submit">LẮC</button>
+	<div id="Money">
+		<img alt="Chip 1$" class="ChipsCoin ChipsActive" id="Chips1"  src="Chips/Chip1.png">
+		<img alt="Chip 5$" class="ChipsCoin" id="Chips5"  src="Chips/Chip5.png">
+		<img alt="Chip 10$" class="ChipsCoin" id="Chips10" src="Chips/Chip10.png">
+		<img alt="Chip 20$" class="ChipsCoin" id="Chips20" src="Chips/Chip20.png">
+		<img alt="Chip 50$" class="ChipsCoin" id="Chips50" src="Chips/Chip50.png">
+		<img alt="Chip 100$" class="ChipsCoin" id="Chips100" src="Chips/Chip100.png">
+		<img alt="Chip 500$" class="ChipsCoin" id="Chips500" src="Chips/Chip500.png">
+		<img alt="Chip 1000$" class="ChipsCoin" id="Chips1000" src="Chips/Chip1000.png">
+	</div>
+	<audio id="audio" style="display: none" controls="" loop>
+		<source src="shake.mp3" type="audio/mpeg">
+	</audio>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
